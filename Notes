@@ -1,0 +1,262 @@
+CSS Review
+----------
+CSS -> Cascading Style Sheets, separate content from presentation
+inline > internal > external
+SCSS/SASS are most widely used CSS pre-processors
+Bootstrap -> most popular frontend framework on the web
+
+UI -> user interface
+Responsive -> looks good across diff. screen sizes
+Breakpoints -> markes at which a change will occur to improve UI
+media queries -> used for device-specific breakpoints
+Ex. @media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px){
+  font-size: 12px;
+}
+
+Pixel perfect -> replicating a mockup perfectly
+flat design -> minimalist UI design language characterized by simple elements
+Skeuomorphism -> characterized by elements that look like counterparts in real world
+Grid system -> simple CSS framework that provides column systems for grid layouts
+Material design -> Google's visual language
+Material UI -> react components implementation of google's design language
+W3C -> group responsibl efor HTML and CSS standards
+
+Media queries -> device screen width, orientation, pixel density, etc
+min-width is used often, so is max-width
+
+Rely on breakpoints that matter for your layout! Resize down and see when
+it starts to look bad/weird!
+
+Mobile-first design, why?
+1. Restyling responsiblity on larger devices w/ mroe computing mroe
+2. Adding styles instead of overwriting them
+
+Viewpoint to enable responsive layout, otherwise the display width will be
+automatically set to be way diferent.
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+SASS -> Break things up then import from different files!
+Variables, nesting styles, etc.
+base -> colors, fonts, grid, layout, reset
+In application.scss, import scss pages and get rid of '**require_tree'
+Break up all styles into components!
+
+Specificity Selectors
+* -> Tag -> Class -> ID -> Inline -> !important
+Notice how it chooses from the closest container first, and if not found,
+it'll choose the parent container.
+
+Block -> respect width/height, take 100% of parent element
+Inline -> do not respect width/height, large as largest descendent
+Inline-block -> respect width/height, large as largest descendant
+
+Contnet Box -> size includes only content
+Border Box -> includes content, padding, and border
+
+Float -> placed left/right side, text/inline wrap around, element is taken from
+the normal web page flow
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+Flexbox -> easily layout, align, and distribute space among items in a container
+container alters its items to best fill its space
+A Complete Guide to Flexbox!
+
+Grid -> please use with float or flex!
+Huh, you can have more than one display type per element...
+Rather than making a custom grid system, can probably use CSS's new built-in...
+
+Position -> static, relative,fixed, absolute
+--------------------------------------------------
+Static -> default, sit in flwo of document, can't modify position by
+using left/to[/bottom/right relative
+
+Relative -> occupies space in flow of page, relative to normal position,
+can reposition using left/top/etc
+
+Fixed -> relative to viewport, stays in same place (not affected by scrolling),
+taken out of the flow aka no space, adjust location by using left/top/etc
+
+Absolute -> positioned with respect to its most recent non-statically
+positioned ancestor, can adjust
+
+Can do relative -> absolute -> flex -> flex-direction column to make dropdown
+
+What about if you want a header that's always on the page? Fixed nav!
+position -> fixed, top -> 0 (stick to top of the viewport)
+--------------------------------------------------------------
+Learning Goals for the CSS Course
+How to use the browser inspector for CSS/HTML
+Semantic HTML
+Classes/ids
+CSS selector precedence
+Default browser styles
+Box model (margin, border, padding, width/height)
+Display block and inline
+Document flow
+Floating and clearing
+Pseudo content (:after/:before)
+Clearfix (use .group)
+Positioning (static, relative, absolute, fixed)
+Pseudo classes (:hover/:active/:focus)
+Box sizing (change the way the box model is calculated)
+
+Everything is rectangles!
+Common display values: none, block, inline, inline-block
+Several more types such as table and flex
+
+Inline -> cannot contain block elements, follow text flows, minimal height/width,
+cannot manually set height/width, padding/margin only work left/right
+
+Change box-sizing property to border-box
+
+Margin -> private space, not part of element,can be set to auto to distribute
+left/right, can be negative
+Weird: push thru top/bottom of ay direct ancestors that do not have border/padding
+Margin collapses, always see through
+
+Inherit -> take property value from its parent element
+Makes sense on font, color, text-align, etc
+Does not make sense on background, margin, padding, border...
+
+CSS reset -> browsers aka user agents have internal stylesheet, sensible defaults
+html, body, section, article,
+Ex.
+h1, h2, p, strong, em, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+Pseudo-content -> content: "whatever", used to inject content inside an
+element. Can inject after or before using :after, :before
+Acts as inline by default, can take any styling, needs a declared content
+property, content property can be a string or select an element's attribute
+
+Float -> floats an element to left/right side of parent container, used to
+align block elements next to each other, shows up at expected position,
+takes up minimal vertical/horizontal to accomodate content
+Doesn't stretch height of parent container-- sticks out instead!
+All content that follows wraps/flows around, unless cleared
+To tell cannot wrap around floated element, define "clear", aka refuse to wrap
+and show below floated element
+
+Clearfix -> parent element extend to full height of all floated elements inside it
+Injects empty block pseudo element inside w/ clear property, put after float element!
+
+Grid!
+https://learncssgrid.com/
+https://cssgridgarden.com/
+
+list-style types! Can set to none to get rid of...
+https://www.w3.org/TR/CSS21/propidx.html
+
+https://developer.mozilla.org/en-US/docs/Glossary/Semantics
+
+Display: block and put in padding!
+Making a nav bar with float is really easy, but with flexbox or grid it's
+even easier and cleaner.
+Margin -> space outside element, Padding -> space inside element
+
+Links and pictures are inline elements by default!
+img reset -> display block, width 100%, height: auto;
+
+Remember that relative takes space, but absolute doesn't!
+Static/Relative -> Take up space
+Fixed/Absolute -> doesn't take up space
+Static -> Can't be moved with left/right/etc
+Relative/Fixed/Absolute -> can be moved
+
+Create a coordinate system!
+use relative to make coordinate system -> absolute to place, relative to
+whaat you put as position:relative and won't move as you change size of page
+
+How to layer image over another image?
+image -> absolute, transform -> rotate, opacity, etc, do whatever!
+Transition is really cool too! Ie. transition: opacity 1s;
+transition: top 1s, transform 1s
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
+Ex. ending result here, starting result in .img-glasses and such
+figure:hover .img-glasses {
+	display:block;
+}
+Think about how the above works.
+
+https://css-tricks.com/almanac/properties/t/transform/
+Transform property is really cool and has hella functions
+
+Redid: Flexbox Froggy, Flexbox Defense, Grid Garden
+
+grid-area and grid-template, remember span!
+grid-area: / / / /, grid-template: /
+(grs / gcs / gre / gce), (gtr gtc)
+All direct children of grid containers become grid items
+grid or inline-grid
+grid-template (combine grid rows / grid columns)
+minmax() function -> accepts 2 arg, min and max size
+auto -> grow/stretch based on size of content
+50% will mean no mroe than 50% of grid container width
+repeat(nbr repeats, whatever) useful for repeating
+Gutters -> aka grid-gap (grid-row-gap grid-column-gap) -> space
+between rows and columns, not along edge of container
+grid-area (grid row start grid col start grid row end grid col end)
+span to say how many elements to go across
+
+Naming grid lines -> when using grid template, put the name in brackets
+b4 size like so [name] can make multiple names per by [name1 name2]
+After naming, can use grid-area: name 1 /name 2/ name 3/ name 4
+
+W/ grid-template-areas, can name entire areas instead!
+
+grid-auto-(rows columns flow) etc decides direction and size in implicit grid
+
+grid area or grid lines implicitly named depending on which you do!
+
+Can layer/stack grid items by properly positioning and assigning z-index
+Hmm, can make a peel away page pretty easily with this! By changing z-index
+w/ transitions... Can easily place a grid item on top of another!
+
+justify-items, justify-self align items along row axis
+align-items, align-self align items along the column axis
+(use on container) (use on self)
+items: accepts auto/normal/start/end/center/stretch/baseline/first baseline/last baseline
+self: same as items above
+
+align-content and justify-content accept:
+normal/start/end/center/stretch/space-around/space-between/space-evenly/baseline/
+first baseline/last baseline
+moves all content!
+
+https://css-tricks.com/snippets/css/complete-guide-grid/
+Note grid-auto-flow, the dense part. row and col dense, where it decides how to
+fill in holes earlier if smaller items come up later
+Damn, grid is shorthand for everything
+
+px, em, rem, %, fr, etc...fractional units,
+min-content, max-content, minmax(), repeat, auto-fill, etc
+
+rem -> root em -> em unit relative to font-size of parent, relative to
+the root or html element.
+Use rem if possible!
+Set default font-size to 62.5%, thus making everything scale w/ different
+screen sizes. (People use 62.5 instead of 100% to make the calculation easier)
+(62.5% of 16 px is 10px, meaning 1rem = 10px)
+
+rem for spacing + font sizing, em for layouts like menu!
+Why em? (You actually want nested font percentages!)
+https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97
+
