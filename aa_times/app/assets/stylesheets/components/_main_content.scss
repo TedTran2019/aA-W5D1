@@ -37,6 +37,7 @@ h1 .title {
 	height: 120px;
 	width: 100%;
 	object-fit: cover;
+	padding-bottom: 10px;
 }
 
 .thumbnail img {
@@ -86,4 +87,22 @@ h1 .title {
 	text-align: center;
 }
 
+span a:hover {
+	text-decoration: underline;
+}
 
+.main-content p {
+	padding: 10px 0;
+}
+
+.main-content {
+	margin-top: 20px;
+}
+
+.main-middle p {
+	border-bottom: 1px solid #ccc;
+}
+
+.main-middle .title {
+	margin-top: 8px;
+}

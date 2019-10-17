@@ -373,3 +373,18 @@ mixups.
 
 https://apidock.com/ruby/DateTime/strftime
 strftime is rly useful! Finally...
+
+Hmm, float and clearfix result in some wacky errors
+if all the elements inside the container aren't floated.
+Should have used flexbox instead of grid system here...
+
+Hmm.. learned a lot about CSS here. More particularly-- think about where you'd
+put margins/paddings beforehand. Ie. where should there be a space, logically?
+Margins are a bit easier because it collapses, paddings are important for buttons
+and such for clicking, however. Notice how you did a "hack" near the end-- by
+just putting margin-bottom on the picture. Think about if there were a random
+number of articles-- how would you handle that and where should margins/paddings
+always be?
+
+You're kinda just throwing out random tags to get what you want, and being
+extremely unorganized.
