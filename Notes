@@ -260,3 +260,116 @@ rem for spacing + font sizing, em for layouts like menu!
 Why em? (You actually want nested font percentages!)
 https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97
 
+Remember order that CSS style sheets are loaded
+url(../folder/file) no ""!
+
+  .hamburger-dropdown > li {
+    background-image: url(../assets/hamburger.png);
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+  }
+
+  Notice how painful it is to spot a miswritten class tag!
+  Also, notice how you couldn't really see the problem with background-image!
+  If it's too large, doesn't seem to show up anywhere. Only after using
+  background-size tag did things work out.
+
+Is the left:0 really necessary, since it's automatically 0?
+
+display
+margin/padding
+border
+width
+font-family
+font-size
+font-weight
+color
+background
+float
+(I'd personally prefer to practice using grid, but I guess they want
+us to simply use floats/clearfix/grid system to do the layout)
+margin: auto -> spaces out margin on left/right side of element
+
+Odd glitch? Nothing was showing up... I wonder why, until I put in
+height and removed it.
+
+Used border-sizing: border-box rather than just calculate paddings and such
+for css review exercise.
+
+http://validator.w3.org/ -> Validates HTML and checks for errors
+Descriptive classes, all lowercase with dashes
+Double quote attributes, aka ""
+Keep selectors as shallow as possible
+Never use IDs as selectors
+
+PerfectPixel tool!
+
+Common gotchas: when using absolute position, know what coordinate system you're
+working in! Relative!
+Pseudo-content is injected inside the selected element as an inline element
+If rules look correct but not showing up, pull up browser inspector to see conflicting rules
+
+Reset / Appearance / Box-model / Box-sizing / Cursor
+
+appearance property is used to display an element using a platform-native styling
+based on the users' operating system's theme. Can use to apply platform
+specific styling to an element that doesn't have, or remove platform specific styling.
+Ie. -webkit-appearance: none;
+https://css-tricks.com/almanac/properties/a/appearance/
+
+Font downloading for cooler fonts introduced in CSS3 fonts module
+font-weight from 100 to 900, with 400 being normal. Some common fonts
+don't have any weights besides 400 and 700
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://css-tricks.com/almanac/properties/b/border/
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+Remember -> least specific tag possible to apply styling!
+
+Be able to reason about styling approaches from screenshots of a design
+Be able to layout elements in a custom Grid system
+Know how to create interactive elements such as sidebars and dropdowns
+Understand media queries and responsive design
+Know how to use an icon font system
+Know how to organize stylesheets in a Rails Application
+
+https://mattbrictson.com/lightning-fast-sass-reloading-in-rails
+bundle exec guard -P livereload
+Easy to setup workflow using style injection, see styling changes immediately
+after authoring them without having to refresh
+"Use guard-livereload with rack-livereload to automatically push new styles to the browser
+Make sure your Guardfile enables style injection by using the right regular expressions
+Embrace the Sprockets //= require directive (yes, even in SCSS)
+Be conscious of your @import statements and use them sparingly"
+Compass or Bourbon frameworks for quicker CSS
+
+base -> hold styles that apply to app globally
+components -> styles for specific components
+Think about how naming should be in HTML in this case.
+
+Use SCSS variables when defining font or color values
+https://github.com/rails/sass-rails#features
+
+Rails Asset Pipeline and navigating file structure
+HTML, CSS, or both
+docs -> screenshots and copy, images for mockups and text for app's content
+HTML rendered using rails partials in app/views/static_pages/index.html.erb
+Images used to style app in app/assets/images
+JS files in app/assets/javascripts
+Script tag in application.html.erb loads Font Awesome's icon classes
+
+Reset -> Layout -> Header -> Main Nav -> Masthead -> Sections Nav -> Gear Dropdown
+-> Main Content -> Custom Flexible Grid(or use just Grid) -> News Content
+-> Sections Sidebar -> Search Modal -> Fixed Header
+
+<i> </i> tag for alternate voice or mood in text, usually Italics
+span tag for grouping/applying styles to inline elements
+https://fontawesome.com/icons?d=gallery -> Pretty cool! For using icons...
+
+Notice how everything is named by class in components to prevent tag
+mixups.
+
+https://apidock.com/ruby/DateTime/strftime
+strftime is rly useful! Finally...
