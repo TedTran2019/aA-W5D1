@@ -1,0 +1,66 @@
+iframe {
+	width: 95%;
+	height: auto;
+	display: block;
+	min-height: 400px;
+}
+
+.title {
+	font-weight: 700;
+}
+
+.author {
+	color: grey;
+}
+
+.main-content span {
+	display: block;
+}
+
+h3 {
+	font-weight: 400;
+}
+
+h2 .title {
+	font-size: 16px;
+}
+
+h1 .title {
+	font-size: 24px;
+}
+
+.main-content ul {
+	list-style: disc;
+}
+
+.thumbnail {
+	height: 120px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.thumbnail img {
+	height: 100%;
+}
+
+.main-content li {
+	padding: 2px;
+}
+
+.articles-list {
+	font-weight: 700;
+}
+
+.aside-header {
+	text-align: center;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.main-article a{
+	color: blue;
+}
+
+.articles-list li:hover, .title:hover {
+	text-decoration: underline;
+}
