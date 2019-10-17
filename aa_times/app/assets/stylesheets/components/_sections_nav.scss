@@ -1,0 +1,27 @@
+.section-links {
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid #ccc;
+}
+
+.section-links li {
+	margin: 10px;
+}
+
+.section-links li:hover {
+	background-color: $light-gray;
+}
+
+.section-links li {
+	font-weight: 700;
+}
+
+.section-links li:last-child:hover {
+	background-color: white;
+	text-decoration: underline;
+}
+
+.section-links li:last-child {
+	font-weight: 400;
+	text-transform: uppercase;
+}
