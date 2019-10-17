@@ -64,3 +64,26 @@ h1 .title {
 .articles-list li:hover, .title:hover {
 	text-decoration: underline;
 }
+
+.main-content section, .main-content aside {
+	border-bottom: 3px inset grey;
+}
+
+.main-footer form {
+	display: flex;
+}
+
+.main-footer input {
+	flex: 1;
+	border: 1px inset #ccc;
+	text-align: center;
+	color: $dark-gray;
+	font-size: 16px;
+}
+
+.main-footer span {
+	color: $dark-gray;
+	text-align: center;
+}
+
+
