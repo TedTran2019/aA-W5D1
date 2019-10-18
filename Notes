@@ -391,3 +391,38 @@ extremely unorganized.
 
 https://css-tricks.com/snippets/css/css-triangle/
 Triangles in CSS! That's hella hacky...
+
+https://css-tricks.com/full-width-containers-limited-width-parents/
+Huh. Pretty cool! Full width container in limited width parent
+
+https://github.com/weppos/publicsuffix-ruby
+For domain suffix validations.
+
+Border radius 50% to make circles!
+-------------------------------------------------
+Reviewing instructor solution:
+1. Think about nesting things on an HTML page-- when you should add additional
+containers?
+2. Span is like div for inline elements
+3. Using ids for Javascript, same id/class and additional classes for more attrib?
+4. Naming classes for reuse, not just in specific page
+5. Usage of hr and header, need more work in learning semantic tags and when to use
+6. placeholder option for input tag
+7. Inside of forms, section class "input-wrapper" to wrap input for styling
+8. small, strong, center, etc tags
+9. partials for cleaner code: what should be put into partials?
+10. Fontawesome's and i tag
+11. THumbnail trick and use of object-fit: cover;
+12. Flex vs customized grid system vs grid
+13. flex 1 to stretch to fill out container
+14. proper CSS reset page
+15. Notice how elements are selected. Ie. main container like .gear-dropdown
+  then whatever else. Barring that, a specifically made class. This stops
+  conflicts/errors when running a lot of pages.
+16. :not(:last-child), :not(:etc) that's pretty useful, :not(.subheader), etc
+17. CSS overflow: what do when content too big
+18. max-height: sets maxheight, if content is bigger, overflow property
+  determines what happens!
+19. Opacity, display: none, etc things you can transform!
+20. TRIANGLES. -> Ohh, I get it. Make a grey triangle, then overlay a white
+    triangle over it so people can only see the grey <. That's smart.
